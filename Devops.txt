@@ -1,0 +1,60 @@
+Devops 6 principles: 
+* Don't repeat yourself
+* Infrastructure as a code
+* Configuration management
+* High availability
+* Customers first
+* Share responsibility
+
+Core principle:
+-> Infrastructure as a code:
+	Infrastructure as code falls into 5 categories:
+		Custom Scripts
+		Configuration Management Software
+		Server templating
+		Orchestration
+		Provisioning
+-> Configuration Management:
+	*Configuration Management Tools: 
+		Chef
+		Saltstack
+		Ansible
+-> 
+
+
+Software Development Lifecycle
+	The waterfall model
+	The v-model
+	The spiral model
+	The agile model
+CAMS -> Culture, Automation, Measurement and Sharing
+
+CI/CD Key terms:
+	Pipeline: A set of data processing elements connected in series, where the output of one element is the input of the next one.
+	Continuous Integration: The practice of merging all developers' working copies to a shared mainline several times a day.
+	Continuous Delivery: An engineering practice in which teams produce and release value in short cycles.
+	Continuous Deployment: A software engineering approach in which the value is delivered frequently through automated deployments.
+	Infrastructure as Code: The management of infrastructure using code.
+	Provisioning: The process of setting up IT infrastructure.
+	Artifact: A product of some process applied to the code repository.
+	DevOps: A set of practices that works to automate and integrate the processes between software development and IT teams.
+	Testing: A practice that seeks to ensure the quality of the software.
+
+8 Principles of Continuous Delivery
+	Repeatable Reliable Process
+	Automate Everything
+	Version Control Everything
+	Bring the Pain Forward
+	Build-in Quality
+	"Done" Means Released
+	Everyone is Responsible
+	Continuous Improvement
+
+Monitering tools:
+	Nagios(opens in a new tab) and Zabbix(opens in a new tab) - comprehensive solutions for monitoring large infrastructure, but maybe too big and complex for small projects.
+	Graphite(opens in a new tab) - Opensource database and a graphing solution for storing and displaying monitoring data.
+	InfluxDB(opens in a new tab) - an open-source distributed time series database for metrics, events, and analytics.
+	StatsD(opens in a new tab) - Simple daemon for easy stats aggregation, by Etsy. Read about the philosophy behind it in the article by it's creators - Measure Anything, Measure Everything(opens in a new tab)
+	Grafana(opens in a new tab) - metrics dashboard and graph editor for Graphite and InfluxDB
+	PagerDuty(opens in a new tab) - incident resolution lifecycle management platform that integrates with over 100 other systems to streamline the process for large organisations.
+	Logstash(opens in a new tab) - log storage and search system, works well with - Kibana(opens in a new tab) graphing and visualisation software.
