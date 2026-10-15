@@ -7,13 +7,35 @@ on:
   push:
     branch: [master]
   workflow_dispatch:
-
 jobs:
-  Sample_check:
+  sync:
     runs-on: ubuntu-latest
-
+    outputs:
+      state: ${{ steps.rand_check.outputs.state }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Determine whether to run the job `test` or halt the workflow run
+        id: rand_check
+        run: |
+          # The following will choose between `run` and `halt` randomly
+          # and set the output of the job to the chosen value
+          if [ $((RANDOM % 2)) -eq 0 ]; then
+            # set the output of the job to `run`
+            echo "state=run" >> "$GITHUB_OUTPUT"
+            echo "Running the job `test`..."
+          else
+            # set the output of the job to `halt`
+            echo "state=halt" >> "$GITHUB_OUTPUT"
+            echo "Skipping the job `test`..."
+          fi
+  Test:
+    runs-on: ubuntu-latest
+    needs: sync
+    if: ${needs.sync.outputs.state == 'run'}
+    steps:
+      - name: Run test suite
+        run: |
+          echo "Running tests..."
+          sleep 5 # Simulate running tests
+          exit 0
 
-      - name: Show project files
-        run: ls -r
+  
