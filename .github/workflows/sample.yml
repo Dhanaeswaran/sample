@@ -29,6 +29,8 @@ jobs:
             echo "state=halt" >> "$GITHUB_OUTPUT"
             echo "Skipping the job `test`..."
           fi
+    env:
+      $TEMP: null
   Test:
     runs-on: ubuntu-latest
     needs: sync
