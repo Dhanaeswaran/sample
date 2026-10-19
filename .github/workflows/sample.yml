@@ -23,7 +23,7 @@ jobs:
             echo "state=run" >> "$GITHUB_OUTPUT"
             NEW_COUNT=$((${{vars.ACTION_COUNT}}+1))
             echo $NEW_COUNT
-            echo "ACTION_COUNT=NEW_COUNT" >> "$GITHUB_ENV"
+            echo "ACTION_COUNT=$NEW_COUNT" >> "$GITHUB_ENV"
             echo "Running the job `test`..."
           else
             # set the output of the job to `halt`
