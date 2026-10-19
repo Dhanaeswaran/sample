@@ -21,7 +21,7 @@ jobs:
           if [ ${{vars.ACTION_COUNT}} -le 2 ]; then
             # set the output of the job to `run`
             echo "state=run" >> "$GITHUB_OUTPUT"
-            echo "$TEMP = ${{vars.ACTION_COUNT}} + 1"
+            echo "${{vars.ACTION_COUNT}} + 1" >> $TEMP
             echo "ACTION_COUNT = $TEMP" >> $GITHUB_ENV
             echo "Running the job `test`..."
           else
