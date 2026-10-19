@@ -18,7 +18,7 @@ jobs:
         run: |
           # The following will choose between `run` and `halt` randomly
           # and set the output of the job to the chosen value
-          if true; then
+          if [$Action_co -le 2]; then
             # set the output of the job to `run`
             echo "state=run" >> "$GITHUB_OUTPUT"
             echo "Running the job `test`..."
@@ -27,6 +27,8 @@ jobs:
             echo "state=halt" >> "$GITHUB_OUTPUT"
             echo "Skipping the job `test`..."
           fi
+    env: 
+      Action_co: ${{var.ACTION_COUNT}} 
   Test:
     runs-on: ubuntu-latest
     needs: sync
